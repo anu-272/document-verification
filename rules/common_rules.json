@@ -1,0 +1,17 @@
+{
+  "version": "APH-2026-27",
+  "rules": [
+    {"rule_id": "AFFIDAVIT_REQUIRED", "type": "PresenceRule", "description": "Affidavit/undertaking must be submitted",
+     "document_type": "AFFIDAVIT", "severity": "MANDATORY",
+     "message_on_fail": "Affidavit/undertaking is missing. Upload the notarised affidavit."},
+    {"rule_id": "TER_PAYMENT_REQUIRED", "type": "PresenceRule", "description": "TER payment receipt must be submitted",
+     "document_type": "TER_PAYMENT_RECEIPT", "severity": "MANDATORY",
+     "message_on_fail": "TER payment receipt is missing."},
+    {"rule_id": "INSTITUTE_ID_CONSISTENT", "type": "ConsistencyRule", "description": "Institute ID must match across documents",
+     "field": "institute_id", "across": ["AFFIDAVIT", "STATE_NOC", "NAAC_CERTIFICATE"], "severity": "MANDATORY",
+     "message_on_fail": "Institute ID differs between submitted documents."},
+    {"rule_id": "INSTITUTE_ID_RECORD_MATCH", "type": "RecordMatchRule", "description": "Institute ID matches AICTE records",
+     "document_type": "AFFIDAVIT", "field": "institute_id", "record_field": "institute_id", "severity": "MANDATORY",
+     "message_on_fail": "Institute ID does not match the AICTE institutional record."}
+  ]
+}

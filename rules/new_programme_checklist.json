@@ -1,0 +1,3 @@
+{"version":"APH-2026-27","application_category":"NEW_PROGRAMME","include":["common_rules.json"],
+ "rules":[{"rule_id":"BUILDING_PLAN_REQUIRED","type":"PresenceRule","document_type":"BUILDING_PLAN","severity":"MANDATORY","message_on_fail":"Sanctioned building plan is missing."},
+          {"rule_id":"LAND_DOC_REQUIRED","type":"PresenceRule","document_type":"LAND_DOCUMENT","severity":"MANDATORY","message_on_fail":"Land ownership/lease document is missing."}]}

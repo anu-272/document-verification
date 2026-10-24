@@ -1,0 +1,10 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+redis
+psycopg2-binary
+minio
+opencv-python-headless
+numpy
+pytesseract
+pymupdf
+ultralytics

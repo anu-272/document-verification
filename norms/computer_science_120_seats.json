@@ -1,0 +1,12 @@
+{
+  "programme": "Computer Science", "intake": 120, "version": "APH-2026-27",
+  "norms": {
+    "computer_lab_min_area_sqm": {"value": 75, "source": "floorplan", "room_match": "computer lab"},
+    "computer_workstations_min": {"value": 40, "source": "vision", "class": "computer_workstation"},
+    "library_min_area_sqm": {"value": 200, "source": "floorplan", "room_match": "library"},
+    "library_min_books": {"value": 2000, "source": "certificate", "field": "library_books"},
+    "internet_speed_gbps": {"value": 1, "source": "certificate", "field": "internet_gbps"},
+    "wheelchair_ramp_required": {"value": 1, "source": "vision", "class": "wheelchair_ramp"},
+    "fire_extinguisher_min": {"value": 1, "source": "vision", "class": "fire_extinguisher"}
+  }
+}

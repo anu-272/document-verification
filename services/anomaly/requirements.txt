@@ -1,0 +1,13 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+celery[redis]==5.4.0
+redis
+psycopg2-binary
+minio
+opencv-python-headless
+numpy
+pymupdf
+pdfminer.six
+qdrant-client
+requests
+torch

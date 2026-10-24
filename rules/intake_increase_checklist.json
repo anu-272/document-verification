@@ -1,0 +1,3 @@
+{"version":"APH-2026-27","application_category":"INTAKE_INCREASE","include":["common_rules.json"],
+ "rules":[{"rule_id":"NBA_REQUIRED","type":"PresenceRule","document_type":"NBA_CERTIFICATE","severity":"CONDITIONAL","message_on_fail":"NBA accreditation certificate is missing for intake increase."},
+          {"rule_id":"FACULTY_MIN_INCREASE","type":"ThresholdRule","record_field":"faculty_count","minimum":30,"severity":"MANDATORY","message_on_fail":"Faculty strength insufficient for requested intake."}]}

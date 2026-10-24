@@ -1,0 +1,24 @@
+{
+  "version": "APH-2026-27",
+  "application_category": "EOA",
+  "include": ["common_rules.json"],
+  "rules": [
+    {"rule_id": "FIRE_NOC_REQUIRED", "type": "PresenceRule", "description": "Fire Safety NOC must be submitted",
+     "document_type": "FIRE_SAFETY_NOC", "severity": "MANDATORY",
+     "message_on_fail": "Fire Safety NOC is missing. Upload valid NOC from State Fire Dept."},
+    {"rule_id": "FIRE_NOC_EXPIRY", "type": "ExpiryRule", "document_type": "FIRE_SAFETY_NOC", "field": "valid_until",
+     "grace_days": 0, "severity": "MANDATORY", "message_on_fail": "Fire Safety NOC has expired."},
+    {"rule_id": "STATE_NOC_REQUIRED", "type": "PresenceRule", "description": "State NOC required",
+     "document_type": "STATE_NOC", "severity": "MANDATORY", "message_on_fail": "State NOC is missing."},
+    {"rule_id": "STATE_NOC_EXPIRY", "type": "ExpiryRule", "document_type": "STATE_NOC", "field": "valid_until",
+     "grace_days": 0, "severity": "MANDATORY", "message_on_fail": "State NOC has expired. Please upload renewed NOC."},
+    {"rule_id": "NAAC_VALIDITY", "type": "ExpiryRule", "document_type": "NAAC_CERTIFICATE", "field": "valid_until",
+     "grace_days": 0, "severity": "CONDITIONAL", "message_on_fail": "NAAC accreditation appears to have lapsed."},
+    {"rule_id": "FACULTY_MIN", "type": "ThresholdRule", "description": "Sanctioned-intake faculty count",
+     "record_field": "faculty_count", "minimum": 20, "severity": "ADVISORY",
+     "message_on_fail": "Faculty count in AICTE records is below the indicative minimum."},
+    {"rule_id": "OCR_QUALITY", "type": "ThresholdRule", "description": "Legibility of scans",
+     "doc_field": "ocr_confidence", "minimum": 0.6, "severity": "ADVISORY",
+     "message_on_fail": "One or more scans are poorly legible; request a clearer copy."}
+  ]
+}
